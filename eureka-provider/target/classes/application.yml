@@ -1,0 +1,18 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: eureka-provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-2ze8rd445v05n0zwh8o.mysql.rds.aliyuncs.com:3306/test?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: hkx_123_
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

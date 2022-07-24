@@ -1,0 +1,14 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tjetc.test.dao.PaymentDao">
+
+    <resultMap id="BaseResultMap" type="com.tjetc.test.Payment">
+        <id property="id" column="id" javaType="java.lang.Long" jdbcType="BIGINT"/>
+        <result property="serial" column="serial" javaType="java.lang.String" jdbcType="VARCHAR"/>
+    </resultMap>
+    <insert id="create" useGeneratedKeys="true" parameterType="com.tjetc.test.Payment">
+        insert into payment(id ,serial) values (null,#{serial})
+    </insert>
+    <select id="getPayment" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select id,serial from payment where id = #{id}
+    </select>
+</mapper>
